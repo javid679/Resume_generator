@@ -118,6 +118,9 @@ Below is an example structure. Your script may support more fields; keep the key
   "education": []
 }
 ```
+##  output
+
+generated resumes are saved in output folder
 
 ---
 
@@ -137,4 +140,5 @@ You can customize document appearance by editing the constants near the top of `
 This project is licensed under the **MIT License**.
 
 Developed by **Javeed Mohammad**.
+
 
