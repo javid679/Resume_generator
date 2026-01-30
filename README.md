@@ -1,4 +1,4 @@
-# 📄 AI Resume Generator
+# 📄 Resume_Generator
 
 A Python utility that converts structured **JSON resume data** into a clean, professional, **ATS-friendly Word document (`.docx`)**. Store your resume as data once, then generate tailored versions in seconds.
 
@@ -24,28 +24,14 @@ A Python utility that converts structured **JSON resume data** into a clean, pro
 ## 🚀 Key Features
 
 - **JSON → DOCX:** Keep content in JSON, let the script handle Word formatting.
+---
+## ALSO INCLUDES 
 - **JSON-driven generation:** Generate resumes directly from structured JSON inputs.
-- **Sample resume generation:** Run without a JSON file to generate sample resumes (if supported by the script).
-- **Interactive mode:** Build your resume step-by-step via terminal prompts using `--interactive`.
-- **Easy styling edits:** Adjust margins, fonts, and spacing from one configuration section.
+- **Sample resume generation:** Run without a JSON file to generate sample resumes (Helpful if you want to edit the word doc by your own).
+- **Easy styling edits:** Adjust margins, fonts, and spacing from one configuration section. (Refer styling guide.md for default styling )
 - **Dynamic filenames:** Generates professional filenames using your name and target company.
 - **Smart versioning:** Prevents overwrites by appending a counter (e.g., `_1`, `_2`) if a file already exists.
 - **A4 optimized:** A4 dimensions with configurable margins and fonts.
-
----
-
-## 📁 Project Structure
-
-```text
-Resume_generator/
-├── resume-generator.py     # Core engine + styling configuration
-├── my_resume_data.json     # Your resume data (edit this!)
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Git exclusions
-├── README.md               # Documentation
-├── output/                 # Generated resumes output
-└── .venv/                  # Virtual environment (local)
-```
 
 ---
 
@@ -82,21 +68,13 @@ Resume_generator/
 
 ### Option 1: Load from JSON (Recommended)
 
-Edit `my_resume_data.json`, then run:
+fill `my_resume_data.json` with your relevant details, then run:
 
 ```bash
 python resume-generator.py my_resume_data.json
 ```
 
-### Option 2: Interactive Mode
-
-Generate a resume through a guided terminal workflow:
-
-```bash
-python resume-generator.py --interactive
-```
-
-### Option 3: Sample Generation
+### Option 2: Sample Generation
 
 If your script supports it, running without arguments generates sample output:
 
@@ -108,7 +86,7 @@ python resume-generator.py
 
 ## 📄 Filename Generation Logic
 
-The script generates a standardized filename using your resume data.
+The script generates a standardized filename, by using your name and company name from your my_resume_data.json file data
 
 **Format**
 - `Firstname_Lastname_Resume_CompanyName.docx`
@@ -128,11 +106,11 @@ Below is an example structure. Your script may support more fields; keep the key
 ```json
 {
   "personal": {
-    "name": "Javeed Mohammad",
+    "name": "Javeed Mohammad", // it picks up the full name from here for document_title
     "email": "javeed@example.com",
     "phone": "(555) 123-4567",
     "location": "City, State",
-    "company_name": "Google"
+    "company_name": "Google" // it picks up company name from here for the document title
   },
   "summary": "Results-driven developer...",
   "experience": [],
@@ -159,3 +137,4 @@ You can customize document appearance by editing the constants near the top of `
 This project is licensed under the **MIT License**.
 
 Developed by **Javeed Mohammad**.
+
